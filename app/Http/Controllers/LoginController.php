@@ -12,7 +12,10 @@ class LoginController extends Controller
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password]))
         {
             $user = Auth::user();
-            $arr = array('acceso' => "ok", 'error' => "");
+
+            $token = $user->createToken('AppRifas')->plainTextToken;
+
+            $arr = array('acceso' => "ok", 'error' => "", 'token' => $token);
 
             return json_encode($arr);
         }
