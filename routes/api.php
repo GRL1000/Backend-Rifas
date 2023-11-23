@@ -36,6 +36,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request){
 Route::post('/login',[LoginController::class, 'login']);
 
 Route::get('/rifas', [RifaController::class, 'list'])->middleware('auth:sanctum');
+Route::get('/rifa', [RifaController::class, 'get']);
 Route::post('/rifas/guardar',[RifaController::class, 'create']);
 Route::delete('/rifas/borrar',[RifaController::class, 'delete']);
 

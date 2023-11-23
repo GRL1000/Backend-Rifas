@@ -26,6 +26,11 @@ class RifaController extends Controller
         return $rifa;
     }
 
+    public function get(Request $req){
+        $rifa = Rifa::find($req->id);
+        return $rifa;
+    }
+
     public function list() {
         $rifas = Rifa::all();
         return $rifas;
