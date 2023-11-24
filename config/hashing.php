@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'driver' => 'bcrypt',
+    'driver' => 'argon',
 
     /*
     |--------------------------------------------------------------------------
@@ -27,11 +27,6 @@ return [
     | to control the amount of time it takes to hash the given password.
     |
     */
-
-    'bcrypt' => [
-        'rounds' => env('BCRYPT_ROUNDS', 10),
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | Argon Options
